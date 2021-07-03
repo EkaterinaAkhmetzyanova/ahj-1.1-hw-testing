@@ -20,23 +20,25 @@ describe('Credit Card Validator form', () => {
     await browser.close();
   });
 
-  test('should add valid class', async () => {
-    await page.goto(baseUrl);
-    const form = await page.$('[data-widget=card-num-form-widget]');
-    const input = await form.$('[data-id=card-num-input]');
-    await input.type('6011235596645859');
-    const submit = await form.$('[data-id=card-num-submit]');
-    submit.click();
-    await page.waitForSelector('[data-id=card-num-input].valid');
-  });
+  describe('validation card form', () => {
+    test('should add valid class', async () => {
+      await page.goto(baseUrl);
+      const form = await page.$('[data-widget=card-num-form-widget]');
+      const input = await form.$('[data-id=card-num-input]');
+      await input.type('6011235596645859');
+      const submit = await form.$('[data-id=card-num-submit]');
+      submit.click();
+      await page.waitForSelector('[data-id=card-num-input].valid');
+    });
 
-  test('should add invalid class', async () => {
-    await page.goto(baseUrl);
-    const form = await page.$('[data-widget=card-num-form-widget]');
-    const input = await form.$('[data-id=card-num-input]');
-    await input.type('00000000');
-    const submit = await form.$('[data-id=card-num-submit]');
-    submit.click();
-    await page.waitForSelector('[data-id=card-num-input].invalid');
+    test('should add invalid class', async () => {
+      await page.goto(baseUrl);
+      const form = await page.$('[data-widget=card-num-form-widget]');
+      const input = await form.$('[data-id=card-num-input]');
+      await input.type('00000000');
+      const submit = await form.$('[data-id=card-num-submit]');
+      submit.click();
+      await page.waitForSelector('[data-id=card-num-input].invalid');
+    });
   });
 });
