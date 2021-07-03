@@ -1,0 +1,39 @@
+body {
+    color: #333;
+    width: 25%;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cards-icon {
+    border: solid 2px rgb(207, 205, 205);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.disabled {
+    opacity: 0.3;
+}
+
+.active {
+    opacity: 1;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #59c559;
+    border: solid 2px rgb(145, 142, 142);
+    border-radius: 10px;
+}
