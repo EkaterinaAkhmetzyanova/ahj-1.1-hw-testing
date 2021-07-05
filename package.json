@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "e2e": "jest --testPathPattern=./e2e/ --runInBand",
+    "test": "jest --testPathPattern=./src/",
+    "e2e": "jest --testPathPattern=./e2e/",
     "lint": "eslint .",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "start": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
